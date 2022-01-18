@@ -2,6 +2,8 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
+use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -14,5 +16,5 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return User::all()->onlyName();
 });
